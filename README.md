@@ -25,16 +25,16 @@ By applying this REPO to your fresh Kali Linux, you will get following:
 - Install needed tools:
 	- ufw
 	- xsel
-       - xclip
-       - zsh
-       - jq
-       - pipx
-       - ntpdate
-       - flameshot
-       - exiftool
-       - golang
-       - rsyslog
-       - auditd
+	- xclip
+	- zsh
+	- jq
+	- pipx
+	- ntpdate
+	- flameshot
+	- exiftool
+	- golang
+	- rsyslog
+	- auditd
 - Configure-qterminal - xfce4 
 - Configure-konsole - KDE5
 - Configure tmux - User & Root
@@ -54,8 +54,8 @@ By applying this REPO to your fresh Kali Linux, you will get following:
 		- little-plugger
 		- nori
 		- rubyntlm
-	       - winrm-fs
-	       - evil-winrm
+		- winrm-fs
+		- evil-winrm
 	 * Build & install:
 		 * Chisel
 		 * Linpeas
