@@ -1,0 +1,13 @@
+---
+# tasks file for configure-vim
+- name: "Copy vimrc files"
+  copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    owner: "{{ ansible_user_id }}"
+    group: "{{ ansible_user_id }}"
+    mode: "0744"
+    backup: yes
+  loop:
+    - {src: "{{ role_path }}/files/.vimrc", dest: "{{ ansible_env.HOME }}/"}
+    - {src: "{{ role_path }}/files/vimrc", dest: "{{ ansible_env.HOME }}/.config/vim/"}

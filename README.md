@@ -24,6 +24,7 @@ By applying this REPO to your fresh Kali Linux, you will get following:
 - Update & Upgrade Kali.
 - Install needed tools:
 	- ufw
+	- vim
 	- xsel
 	- xclip
 	- zsh
@@ -69,5 +70,6 @@ By applying this REPO to your fresh Kali Linux, you will get following:
 		 * Crackmapexec
 		 * certipy-ad
 * Configure-Logging
+* Configure-vim
 * Install vscode & add customized settings.json
 

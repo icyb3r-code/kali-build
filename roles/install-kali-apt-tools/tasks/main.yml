@@ -5,6 +5,7 @@
     name: "{{ item }}"
     state: latest
   loop:
+      - vim
       - ufw
       - xsel
       - xclip

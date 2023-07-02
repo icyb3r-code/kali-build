@@ -10,16 +10,17 @@
     - role: "roles/update-upgrade"
     - role: "roles/install-kali-apt-tools"
     - role: "roles/install-kali-git-tools"
+    - role: "roles/configure-vim"
     - role: "roles/configure-tmux"
     - role: "roles/configure-zsh"
     - role: "roles/configure-tmux-root"
     - role: "roles/configure-zsh-root"
-    - role: "roles/configure-konsole" # kde5 kali
+    - role: "roles/configure-konsole" # kde5 kali 
     - role: "roles/configure-qterminal" # xfce4 kali
     - role: "roles/customize-browser"
     - role: "roles/gantsign.visual-studio-code"
-       users:
-        - username: "{{ ansible_user_id }}"
+      users:
+        - username: "{{ ansible_user_id }}" 
           visual_studio_code_extensions:
             - streetsidesoftware.code-spell-checker
             - ms-python.python
