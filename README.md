@@ -16,7 +16,7 @@
 
 **Screenshot shows how the steps should look like**
 
-![[attachments/Pasted image 20230702111521.png]]
+![Screenshot](./attachments/Pasted%20image%2020230702111521.png)
 
 ## Tools & Features
 
