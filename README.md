@@ -14,6 +14,10 @@
 - get sudo token `sudo whoami`.
 - run `ansible-playbook -i inventory main.yml`.
 
+**Screenshot shows how the steps should look like**
+
+![[attachments/Pasted image 20230702111521.png]]
+
 ## Tools & Features
 
 By applying this REPO to your fresh Kali Linux, you will get following:
