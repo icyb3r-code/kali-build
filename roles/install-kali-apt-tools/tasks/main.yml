@@ -1,0 +1,22 @@
+---
+# tasks file for install-kali-apt-tools
+- name: "Installing Required Packages"
+  package:
+    name: "{{ item }}"
+    state: latest
+  loop:
+      - ufw
+      - xsel
+      - xclip
+      - zsh
+      - jq
+      - pipx
+      - ntpdate
+      - flameshot
+      - exiftool
+      - golang
+      - rsyslog
+      - auditd
+    
+  become: true
+  become_method: sudo

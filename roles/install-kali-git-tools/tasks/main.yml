@@ -1,0 +1,5 @@
+---
+- include_tasks: kerbrute.yml
+- include_tasks: github-repos.yml
+- include_tasks: python-tools.yml
+- include_tasks: gem-tools.yml

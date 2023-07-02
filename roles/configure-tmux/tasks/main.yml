@@ -1,0 +1,13 @@
+---
+# tasks file for configure-tmux
+# ---
+
+- name: "Copy Tmux Config file For User: {{ ansible_env.USER }}"
+  copy:
+    src: "{{ role_path }}/files/tmux.conf"
+    dest: "{{ ansible_env.HOME }}/.config/tmux/"
+- name: "Get Tmux Plugins Manager From Github For User: {{ ansible_env.USER }}"
+  git:
+    repo: "https://github.com/tmux-plugins/tpm.git"
+    dest: "{{ ansible_env.HOME}}/.config/tmux/plugins/tpm/"
+    update: yes

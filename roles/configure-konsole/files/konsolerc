@@ -1,0 +1,46 @@
+[Desktop Entry]
+DefaultProfile=Icyb3r.profile
+
+[General]
+ConfigVersion=1
+
+[MainWindow]
+1692x905 screen: Height=826
+1692x905 screen: Width=1688
+1692x905 screen: XPosition=2
+1692x905 screen: YPosition=33
+1906x905 screen: Height=526
+1906x905 screen: Width=911
+1906x905 screen: XPosition=497
+1906x905 screen: YPosition=183
+800x600 screen: Window-Maximized=true
+RestorePositionForNextInstance=false
+State=AAAA/wAAAAD9AAAAAQAAAAAAAAAAAAAAAPwCAAAAAvsAAAAiAFEAdQBpAGMAawBDAG8AbQBtAGEAbgBkAHMARABvAGMAawAAAAAA/////wAAAXwBAAAD+wAAABwAUwBTAEgATQBhAG4AYQBnAGUAcgBEAG8AYwBrAAAAAAD/////AAABFQEAAAMAAAOPAAABwgAAAAQAAAAEAAAACAAAAAj8AAAAAQAAAAIAAAACAAAAFgBtAGEAaQBuAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAAAAAAAAAABwAcwBlAHMAcwBpAG8AbgBUAG8AbwBsAGIAYQByAQAAAOj/////AAAAAAAAAAA=
+ToolBarsMovable=Disabled
+Virtual1=Virtual1
+Virtual1 Height 1692x904 Virtual1=825
+Virtual1 Height 1692x905 Virtual1=526
+Virtual1 Height 1692x910 Virtual1=526
+Virtual1 Height 1906x904 Virtual1=825
+Virtual1 Height 1920x1080 Virtual1=1001
+Virtual1 Width 1692x904 Virtual1=956
+Virtual1 Width 1692x905 Virtual1=911
+Virtual1 Width 1692x910 Virtual1=911
+Virtual1 Width 1906x904 Virtual1=949
+Virtual1 Width 1920x1080 Virtual1=1916
+Virtual1 Window-Maximized 1266x557 Virtual1=true
+Virtual1 Window-Maximized 1906x906 Virtual1=true
+Virtual1 Window-Maximized 1920x1080 Virtual1=true
+Virtual1 XPosition 1692x904 Virtual1=848
+Virtual1 XPosition 1692x905 Virtual1=425
+Virtual1 XPosition 1692x910 Virtual1=390
+Virtual1 XPosition 1906x904 Virtual1=955
+Virtual1 XPosition 1920x1080 Virtual1=2
+Virtual1 YPosition 1692x904 Virtual1=33
+Virtual1 YPosition 1692x905 Virtual1=200
+Virtual1 YPosition 1692x910 Virtual1=185
+Virtual1 YPosition 1906x904 Virtual1=33
+Virtual1 YPosition 1920x1080 Virtual1=33
+
+[UiSettings]
+ColorScheme=

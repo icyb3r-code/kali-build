@@ -1,0 +1,16 @@
+---
+# tasks file for configure-tmux
+
+- name: "Copy Tmux Config file For User: ROOT"
+  copy:
+    src: "{{ role_path }}/files/tmux.conf"
+    dest: "/root/.config/tmux/"
+  become: true
+  become_method: sudo    
+- name: "Get Tmux Plugins Manager From Github For User: ROOT"
+  git:
+    repo: "https://github.com/tmux-plugins/tpm.git"
+    dest: "/root/.config/tmux/plugins/tpm/"
+    update: yes
+  become: true
+  become_method: sudo

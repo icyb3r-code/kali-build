@@ -1,0 +1,18 @@
+---
+# tasks file for configure-qterminal
+
+# code: language=ansible
+
+
+- name: "Copy the Configuration Files of qterminal Terminal" 
+  copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    mode: 0444
+    backup: yes 
+  loop:
+    - src: "{{ role_path }}/files/qterminal_bookmarks.xml"
+      dest: "{{ ansible_env.HOME }}/.config/qterminal.org/qterminal_bookmarks.xml"
+    - src: "{{ role_path }}/files/qterminal.ini"
+      dest: "{{ ansible_env.HOME }}/.config/qterminal.org/qterminal.ini"
+  when: "ansible_env['DESKTOP_SESSION'] == 'xfce'"

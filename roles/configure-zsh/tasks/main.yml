@@ -1,0 +1,53 @@
+---
+# tasks file for configure-zsh
+#
+
+# Create Directories
+- name: "Create ZSH Directories: root"
+  file:
+    path: "{{ item.path }}"
+    state: "{{ item.state }}"
+    mode: "0775"
+  loop:
+    - {path: "{{ ansible_env.HOME }}/.cache/zsh/", state: "directory"}
+    - {path: "{{ ansible_env.HOME }}/.zshrc",state: "absent"}
+    - {path: "{{ ansible_env.HOME }}/.config/zsh",state: "directory" }
+
+# Download from github 
+- name: "Download Oh-My-Zsh and Plugins from Github For User: root"
+  git:
+    repo: "{{ item.repo }}"
+    dest: "{{ item.dest }}"
+    depth: 1
+    update: yes
+  loop:
+      - {repo: "https://github.com/ohmyzsh/ohmyzsh.git", dest: "{{ ansible_user_dir }}/.config/oh-my-zsh" }
+      - {repo: "https://github.com/zsh-users/zsh-syntax-highlighting.git", dest: "{{ ansible_env.HOME }}/.config/oh-my-zsh/custom/plugins/zsh-syntax-highlighting" }
+
+# Copy files to their locations
+- name: "Copy ZSH Files For User: {{ ansible_env.USER }}"
+  copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    owner: "{{ ansible_env.USER }}"
+    group: "{{ ansible_env.USER }}"
+    mode: u=rw,g=r,o=r
+    backup: yes
+  loop:
+    - { src: "{{ role_path }}/files/zshenv" , dest: "{{ ansible_env.HOME }}/.zshenv" }
+    - { src: "{{ role_path }}/files/igorsilva.zsh-theme", dest: "{{ ansible_env.HOME}}/.config/oh-my-zsh/themes/igorsilva.zsh-theme"}
+    - { src: "{{ role_path }}/files/zshrc", dest: "{{ ansible_env.HOME }}/.config/zsh/.zshrc"}
+
+# Check the user current shell
+- name: "Get default shell for user"
+  shell: getent passwd {{ ansible_env.USER }} | awk -F ':' '{print $NF}'
+  register: user_shell
+
+- name: " Set ZSH as Default Shell For User: {{ ansible_env.USER }}"
+  command:
+    cmd: "chsh -s /bin/zsh {{ ansible_env.USER }}"
+  when: user_shell.stdout != "/bin/zsh"
+  become: true
+  become_method: sudo 
+
+

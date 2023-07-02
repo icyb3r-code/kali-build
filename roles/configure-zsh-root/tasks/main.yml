@@ -1,0 +1,58 @@
+---
+# tasks file for configure-zsh-root
+
+# Create Required Dirs
+- name: "Create ZSH Directories: root"
+  file:
+    path: "{{ item.path }}"
+    state: "{{ item.state }}"
+    mode: "0775"
+  loop:
+    - {path: "/root/.cache/zsh/", state: "directory"}
+    - {path: "/root/.zshrc",state: "absent"}
+    - {path: "/root/.config/zsh",state: "directory" }
+  become: true
+  become_method: sudo
+
+# Download or clone from github
+- name: "Download Oh-My-Zsh and Plugins from Github For User: root"
+  git:
+    repo: "{{ item.repo }}"
+    dest: "{{ item.dest }}"
+    depth: 1
+    update: yes
+  loop:
+      - {repo: "https://github.com/ohmyzsh/ohmyzsh.git", dest: "/root/.config/oh-my-zsh"}
+      - {repo: "https://github.com/zsh-users/zsh-syntax-highlighting.git", dest: "/root/.config/oh-my-zsh/custom/plugins/zsh-syntax-highlighting" }
+      
+  become: true
+  become_method: sudo
+
+# Copy important files 
+- name: "Copy ZSH Files For User: root"
+  copy:
+    src: "{{ role_path }}/files/{{ item.fname }}"
+    dest: "{{ item.dest}}"
+    owner: "root"
+    group: "root"
+    mode: u=rw,g=r,o=r
+    backup: yes
+  loop:
+    - {fname: "zshenv",dest: "/root/.zshenv" }
+    - {fname: "igorsilva.zsh-theme", dest: "/root/.config/oh-my-zsh/themes/igorsilva.zsh-theme" }
+  become: true
+  become_method: sudo
+
+# check if root user has a zsh shell 
+- name: "Get default shell for user"
+  shell: getent passwd root | awk -F ':' '{print $NF}'
+  register: user_shell
+
+
+- name: " Set ZSH as Default Shell For User: root"
+  command:
+    cmd: "chsh -s /bin/zsh root"
+  when: user_shell.stdout != "/bin/zsh"
+  become: true
+  become_method: sudo 
+

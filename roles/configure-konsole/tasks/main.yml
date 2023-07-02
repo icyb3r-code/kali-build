@@ -1,0 +1,22 @@
+---
+# tasks file for configure-konsole
+# code: language=ansible
+
+
+- name: "Copy the Configuration of Konsole Terminal" 
+  copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    backup: yes 
+  loop:
+    - src: "{{ role_path }}/files/Breeze.colorscheme"
+      dest: "{{ ansible_env.HOME }}/.local/share/konsole/Breeze.colorscheme"
+    - src: "{{ role_path }}/files/Icyb3r.profile"
+      dest: "{{ ansible_env.HOME }}/.local/share/konsole/Icyb3r.profile"
+    - src: "{{ role_path }}/files/konsolerc"
+      dest: "{{ ansible_env.HOME }}/.config/konsolerc"
+    - src: "{{ role_path }}/files/konsoleui.rc"
+      dest: "{{ ansible_env.HOME }}/.local/share/kxmlgui5/konsole/"
+    - src:  "{{ role_path }}/files/sessionui.rc"
+      dest: "{{ ansible_env.HOME }}/.local/share/kxmlgui5/konsole/"
+  when: "ansible_env['DESKTOP_SESSION'] == 'plasma'"
