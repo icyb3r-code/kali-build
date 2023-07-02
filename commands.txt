@@ -1,0 +1,4 @@
+ansible-galaxy collection install community.general
+cd ~/Documents/kali-build
+ansible-galaxy install -r requirements.yml --roles-path ./roles --force
+ansible-playbook -i inventory.yml main.yml

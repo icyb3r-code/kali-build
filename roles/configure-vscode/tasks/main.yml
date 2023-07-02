@@ -1,0 +1,10 @@
+---
+# tasks file for configure-vscode
+
+- name: "Add VSCODE setting file to user: {{ ansible_user_id }}"
+  copy:
+    src: "{{ role_path }}/files/settings.json"
+    dest: "{{ ansible_env.HOME}}/.config/Code/User/"
+    mode: 0755
+    owner: "{{ansible_user_id}}"
+    group: "{{ansible_user_id}}"

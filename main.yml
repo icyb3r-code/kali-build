@@ -14,16 +14,17 @@
     - role: "roles/configure-zsh"
     - role: "roles/configure-tmux-root"
     - role: "roles/configure-zsh-root"
-    - role: "roles/configure-konsole" # kde5 kali 
+    - role: "roles/configure-konsole" # kde5 kali
     - role: "roles/configure-qterminal" # xfce4 kali
     - role: "roles/customize-browser"
-    - role: gantsign.visual-studio-code
-      users:
-        - username: "{{ ansible_user_id }}" 
+    - role: "roles/gantsign.visual-studio-code"
+       users:
+        - username: "{{ ansible_user_id }}"
           visual_studio_code_extensions:
             - streetsidesoftware.code-spell-checker
             - ms-python.python
             - DEVSENSE.phptools-vscode
             - redhat.vscode-yaml
             - redhat.ansible
+    - role: "roles/configure-vscode"
 

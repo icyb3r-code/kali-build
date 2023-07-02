@@ -1,0 +1,9 @@
+{
+    "workbench.editor.enablePreview": false,
+    "editor.fontSize": 16,
+    "debug.console.fontSize": 16,
+    "markdown.preview.fontSize": 16,
+    "redhat.telemetry.enabled": true,
+    "chat.editor.fontSize": 16,
+    "window.zoomLevel": 1
+}

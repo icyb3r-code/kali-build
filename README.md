@@ -10,13 +10,13 @@
 - Clone this repo to your kali linux `git clone`.
 - change you current working directory inside `kali-build`.
 - run `ansible-galaxy collection install community.general`.
-- run `ansible-galaxy install -r requirements`.
+- run `ansible-galaxy install -r requirements.yml --roles-path ./roles --force`.
 - get sudo token `sudo whoami`.
-- run `ansible-playbook -i inventory main.yml`.
+- run `ansible-playbook -i inventory.yml main.yml`.
 
 **Screenshot shows how the steps should look like**
 
-![Screenshot](./attachments/Pasted%20image%2020230702111521.png)
+![](attachments/Pasted%20image%2020230702173639.png)
 
 ## Tools & Features
 
@@ -69,4 +69,5 @@ By applying this REPO to your fresh Kali Linux, you will get following:
 		 * Crackmapexec
 		 * certipy-ad
 * Configure-Logging
+* Install vscode & add customized settings.json
 
